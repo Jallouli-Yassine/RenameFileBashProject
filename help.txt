@@ -1,1 +1,20 @@
-Jalouli
+
+tester la présence d’au moins un argument, sinon il affiche l’usage sur la
+sortie d’erreur et échoue.
+permet d’afficher le help à partir d’n fichier texte contenant une
+description bien détaillée de l’application.
+change tous les noms de fichier ou du répertoire passé en
+paramètre en minuscule.
+renommer les fichiers dont le nom contient des espaces.
+permet d’enlever l’extension du nom du fichier
+change tous les noms de fichier ou du répertoire passé en
+paramètre en majuscule.
+ajoute _d aux noms des repertoires passés en paramètre
+prend en argument le nom d’un fichier et une extension. La fonction
+renomme le fichier en ajoutant l’extension.
+Options
+• -h: Pour afficher le help détaillé à partir d’un fichier texte
+• -g: Pour afficher un menu textuel et gérer les fonctionnalité de façon
+graphique(Utilisation de YAD).
+• -v: Pour afficher le nom des auteurs et version du code.
+• -m: Pour afficher un menu textuel
