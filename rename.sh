@@ -1,6 +1,10 @@
 #!/bin/bash
 
-#ls -l --block-size +100K
+function menu()
+{
+   cat menu.txt
+}
+
 function show_usage() {
 echo "rename.sh :  [-h|--help] [-T] [-t] [-n] [-N] [-d] [-m] [-s] "
 }
@@ -14,7 +18,6 @@ show_usage ;
 if [ $# -gt 0 ]; then
 
 while getopts "hgvm" var
-
 do 
 echo "vous averz choisie l option $var"
 
@@ -29,6 +32,7 @@ g)
 v) 
 ;;
 m) 
+menu
 ;;
 *) echo "mauvais argument"
 esac
