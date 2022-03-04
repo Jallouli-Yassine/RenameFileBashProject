@@ -4,6 +4,42 @@ function menu()
 {
    cat menu.txt
 }
+#supprimer les extensions des fichiers 
+function ajout_d()
+{
+
+
+
+}
+#mettre les fichier en majuscules
+function majus()
+{
+
+echo "donner le nom de fichier" ;
+read nomfichier ;
+f="$nomfichier"
+n="${f%.*}"
+n=$(tr '[:lower:]' '[:upper:]' <<< "$n")
+f="$n.${f#*.}"
+echo "$f"
+echo `mv "$nomfichier" "$f"` ;
+
+
+}
+#mettre les fichiers en miniscules
+function minus()
+{
+
+echo "donner le nom de fichier" ;
+read nomfichier ;
+f="$nomfichier"
+n="${f%.*}"
+n=$(tr '[:upper:]' '[:lower:]' <<< "$n")
+f="$n.${f#*.}"
+echo "$f"
+echo `mv "$nomfichier" "$f"` ;
+}
+
 
 function show_usage() {
 echo "rename.sh :  [-h|--help] [-T] [-t] [-n] [-N] [-d] [-m] [-s] "
