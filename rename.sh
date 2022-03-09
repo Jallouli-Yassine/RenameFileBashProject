@@ -3,6 +3,23 @@
 function show_usage() {
 echo "rename.sh :  [-h|--help] [-T] [-t] [-n] [-N] [-d] [-m] [-s] "
 }
+yad_menu(){
+	export -f HELP
+	export -f majus
+    export -f minus
+	export -f espace
+	export -f delete_ex
+
+yad --title "" --form --width=325 --height=400 --text="<b>Choisir une option pour lexecuter</b>" --image "dialog" --image-on-top \
+--field="<b> Mettre le nom de fichier en majuscule</b>":fbtn "bash -c majus " \
+--field="<b> Mettre le nom de fichier en miniscule</b>":fbtn "bash -c minus" \
+--field="<b> Supprimer les espaces des fichiers</b>":fbtn "bash -c espace" \
+--field="<b> Supprimer extension du fichier</b>":fbtn "bash -c delete_ex" \
+--field="<b> Ajouter _d a un nom de repertoir passer en parametre</b>":fbtn "ajouter_d" \
+--field="<b> changer extension d'un fichier existe</b>":fbtn "" \
+--field="<b>Help</b>":fbtn "bash -c HELP" \
+--button=gtk-cancel:1
+}
 
 function menutext()
 {
@@ -62,6 +79,7 @@ function espace()
 	do
 		mv "$i" `echo "$i" | sed 's/  */_/g'`
 	done
+	echo `clear`
 }
 
 #mettre les fichier en majuscules
@@ -117,8 +135,9 @@ echo "vous averz choisie l option $var"
 #if [ $var == "m" ]; then
 case $var in 
 h) HELP ;;
-g) ;;
-v) ;;
+g) yad_menu;;
+v) echo "***********************Yassine Jallouli & Mohamed Hedi Bousbih******************************"
+   echo "***********************    VERSION 1.0.0                ******************************";;
 m) menutext ;;
 *) echo "mauvais argument"
 esac
@@ -129,4 +148,3 @@ esac
 done 
 else "il faut specifie au moin un argument "
 fi
-
